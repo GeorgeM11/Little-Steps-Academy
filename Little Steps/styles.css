@@ -1,0 +1,416 @@
+/* ======= Stil general ======= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* ======= Navigatie ======= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 150px;
+  background: linear-gradient(90deg, #0057b7, #ff6600);
+  color: white;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.navbar h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.navbar ul li a:hover {
+  opacity: 0.8;
+}
+
+/* ======= Sectiunea principala ======= */
+.hero {
+  background: linear-gradient(to right, rgba(0, 87, 183, 0.85), rgba(255, 102, 0, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #e55c00;
+}
+
+/* ======= Sectiuni ======= */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  color: #0057b7;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ======= Carduri activitati ======= */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+/* ======= Galerie ======= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ======= Formular contact ======= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.contact-form button {
+  background-color: #0057b7;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0045a3;
+}
+
+/* ======= Footer ======= */
+footer {
+  background-color: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px; /* padding mai mic pe mobil */
+    max-width: 100%; /* ocupa tot ecranul */
+    margin: 0; /* fara centrare pe mobil */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ======= Meniu mobil ======= */
+.navbar .burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navbar .burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.navbar ul.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #0057b7;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  padding: 15px;
+  border-radius: 0 0 0 8px;
+}
+
+.navbar ul.mobile-menu li {
+  margin: 10px 0;
+}
+
+.navbar ul.mobile-menu.show {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+  .navbar .burger {
+    display: flex;
+  }
+}
+/* ======= Lightbox Galerie ======= */
+/* ====== Lightbox Galerie centrata ====== */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#lightbox.show img {
+  transform: scale(1);
+}
+
+#lightbox .close,
+#lightbox .prev,
+#lightbox .next {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+#lightbox .close {
+  top: 25px;
+  right: 35px;
+}
+
+#lightbox .prev {
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+}
+
+#lightbox .next {
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+}
+
+#lightbox .close:hover,
+#lightbox .prev:hover,
+#lightbox .next:hover {
+  color: #ff6600;
+}
+
+/* Desktop menu ascuns pe mobil */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #0057b7;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+    border-radius: 0 0 0 8px;
+    z-index: 999;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  .mobile-menu li {
+    margin: 10px 0;
+  }
+
+  .mobile-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .mobile-menu li a:hover {
+    opacity: 0.8;
+  }
+}
+
+/* Desktop menu vizibil pe desktop */
+@media (min-width: 769px) {
+  .burger {
+    display: none;
+  }
+}
+
+/* ======= Buton sectiuni vezi mai mult din index.html======= */
+.section .btn {
+  display: inline-block;
+  margin-top: 20px; /* distanța dintre text și buton */
+  padding: 10px 25px;
+  background-color: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.section .btn:hover {
+  background-color: #e65c00;
+}
