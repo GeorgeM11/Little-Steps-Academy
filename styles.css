@@ -414,3 +414,10 @@ footer {
 .section .btn:hover {
   background-color: #e65c00;
 }
+.navbar-line {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6600, #0057b7);
+  border-radius: 2px;
+  margin-bottom: 0px; /* distanta fata de hero */
+}

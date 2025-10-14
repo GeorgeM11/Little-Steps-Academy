@@ -119,3 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// Adauga clasa loaded dupa ce pagina se incarca complet pentru animatia liniei
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
