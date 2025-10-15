@@ -1,358 +1,458 @@
 /* ======= Stil general ======= */
+/* Setări de bază pentru pagină */
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #222;
-  background-color: #fff;
-  scroll-behavior: smooth;
+  margin: 0; /* elimină marginea implicită a browserului */
+  font-family: "Segoe UI", Arial, sans-serif; /* font implicit */
+  color: #222; /* culoare text principală */
+  background-color: #fff; /* culoare fundal pagină */
+  scroll-behavior: smooth; /* scroll animat pentru ancore */
 }
 
-/* ======= Navigatie ======= */
+/* ======= Navigație ======= */
+/* Containerul principal al header-ului */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 150px;
-  background: linear-gradient(90deg, #0057b7, #ff6600);
-  color: white;
+  display: flex; /* afișare flexibilă pentru aliniere logo + meniu */
+  justify-content: space-between; /* spațiu între logo și meniu */
+  align-items: center; /* aliniere verticală centru */
+  padding: 15px 150px; /* spațiu interior: sus-jos 15px, stânga-dreapta 150px */
+  background: linear-gradient(90deg, #0057b7, #ff6600); /* fundal gradient */
+  color: white; /* culoare text în navbar */
 }
 
+/* Wrapper pentru logo */
 .navbar .logo {
+  display: flex; /* face logo și titlu pe aceeași linie */
+  align-items: center; /* aliniere verticală centru pentru logo + text */
+}
+
+/* Wrapper text logo */
+.logo-text {
+  display: flex; /* stânga + dreapta */
+  align-items: center; /* centru vertical față de Academy */
+  gap: 10px; /* spațiu între Little Steps și Academy */
+}
+
+/* Little Steps vertical și centrat față de Academy */
+.logo-left {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Little sub Steps */
+  justify-content: center; /* centru vertical față de Academy */
+  line-height: 1; /* reduce spațiul dintre Little și Steps */
 }
 
-.navbar .logo img {
-  height: 50px;
-  margin-right: 10px;
-  border-radius: 8px;
+/* Academy mare, în dreapta */
+.logo-right {
+  font-size: 40px; /* mai mare decât Little Steps */
+  font-weight: 700;
+  display: flex;
+  align-items: center; /* centru vertical față de Little Steps */
 }
 
-.navbar h1 {
-  font-size: 22px;
+/* Stil pentru Little Steps */
+.logo-left span {
+  font-size: 16px;
   font-weight: 600;
+  text-align: left; /* text aliniat stânga */
 }
 
+
+/* Dimensiune imagine logo și spațiu față de text */
+.navbar .logo img {
+  height: 70px; /* înălțimea logo-ului */
+  margin-right: 10px; /* spațiu între imagine și titlu */
+  border-radius: 8px; /* colțuri rotunjite pentru imagine */
+}
+
+/* Titlu în navbar */
+.navbar h1 {
+  font-size: 26px; /* mărimea textului titlu */
+  font-weight: 600; /* grosimea fontului */
+}
+
+/* Lista de linkuri din navbar (desktop) */
 .navbar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+  list-style: none; /* elimină markerul listei */
+  display: flex; /* afișează elementele pe o singură linie */
+  margin: 0; /* elimină marginile implicite */
+  padding: 0; /* elimină padding implicit */
 }
 
+/* Spațiere între elementele din meniu */
 .navbar ul li {
-  margin-left: 20px;
+  margin-left: 20px; /* distanță între butoane */
 }
 
+/* Stil linkuri meniu */
 .navbar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s;
+  color: white; /* culoare text link */
+  text-decoration: none; /* elimină sublinierea */
+  font-weight: 500; /* grosimea textului */
+  transition: opacity 0.3s; /* tranziție pentru hover */
 }
 
+/* Hover pentru linkuri */
 .navbar ul li a:hover {
-  opacity: 0.8;
+  opacity: 0.8; /* face linkul puțin translucid la hover */
 }
 
-/* ======= Sectiunea principala ======= */
+/* ======= Linie separatoare între navbar și hero ======= */
+/* Această linie se poate plasa separat în HTML cu clasa .navbar-line */
+/* Dacă preferi pseudo-element, mută proprietățile în .navbar::after */
+.navbar-line {
+  width: 100%; /* ocupă toată lățimea paginii */
+  height: 4px; /* înălțimea liniei */
+  background: linear-gradient(90deg, #ff6600, #0057b7); /* gradient pentru linie */
+  border-radius: 2px; /* colțuri ușor rotunjite */
+  margin-bottom: 20px; /* distanță între linie și secțiunea următoare */
+}
+
+/* ======= Secțiunea principală (hero) ======= */
+/* Fundal, aliniere și paddings pentru zona principală */
 .hero {
   background: linear-gradient(to right, rgba(0, 87, 183, 0.85), rgba(255, 102, 0, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
+  /* combinație gradient + imagine, centrată și acoperire completă */
+  color: white; /* text alb pe hero */
+  text-align: center; /* text centrat */
+  padding: 100px 20px; /* spațiu interior mare pentru efect vizual */
 }
 
+/* Limită lățime conținut hero și centrare */
 .hero-content {
-  max-width: 800px;
-  margin: auto;
+  max-width: 800px; /* lățime maximă conținut */
+  margin: auto; /* centrează orizontal */
 }
 
+/* Titlu hero */
 .hero h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size: 44px; /* mărimea titlului principal */
+  margin-bottom: 15px; /* spațiu sub titlu */
 }
 
+/* Paragraf hero */
 .hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
+  font-size: 22px; /* mărimea textului din hero */
+  margin-bottom: 25px; /* spațiu sub paragraf */
+  font-weight: bold;
 }
 
+/* Butoane generale */
 .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #ff6600;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s;
+  display: inline-block; /* permite padding și margin controlate */
+  padding: 12px 25px; /* spațiu interior buton */
+  background-color: #ff6600; /* culoare buton */
+  color: white; /* culoare text buton */
+  text-decoration: none; /* fără subliniere */
+  border-radius: 6px; /* colțuri rotunjite */
+  font-weight: 600; /* grosime text */
+  transition: background 0.3s; /* tranziție la hover */
 }
 
 .btn:hover {
-  background-color: #e55c00;
+  background-color: #e55c00; /* culoare buton la hover */
 }
 
-/* ======= Sectiuni ======= */
+/* ======= Secțiuni generale ======= */
+/* Stil comun pentru secțiuni */
 .section {
-  padding: 70px 20px;
-  text-align: center;
-  max-width: 1000px;
-  margin: auto;
+  padding: 70px 20px; /* spațiu interior */
+  text-align: center; /* text centrat */
+  max-width: 1000px; /* lățime maximă a conținutului */
+  margin: auto; /* centrrează secțiunea */
 }
 
+/* Titlu secțiune */
 .section h2 {
-  color: #0057b7;
-  margin-bottom: 20px;
-  font-size: 28px;
+  color: #0057b7; /* culoare titlu */
+  margin-bottom: 20px; /* spațiu sub titlu */
+  font-size: 32px; /* mărimea titlului */
 }
 
+/* Paragraf în secțiune */
 .section p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px; /* mărimea textului */
+  line-height: 1.6; /* înălțime linie pentru lizibilitate */
 }
 
-/* ======= Carduri activitati ======= */
+/* ======= Carduri activități ======= */
+/* Container carduri */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
+  display: flex; /* afișare flexibilă pentru carduri */
+  flex-wrap: wrap; /* permite trecerea pe rânduri la resize */
+  justify-content: center; /* centrează rândul de carduri */
+  gap: 25px; /* spațiu între carduri */
+  margin-top: 30px; /* spațiu deasupra cardurilor */
 }
 
+/* Stil individual card */
 .card {
-  background: #f7f7f7;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 280px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: #f7f7f7; /* fundal card */
+  padding: 20px; /* spațiu interior card */
+  border-radius: 12px; /* colțuri rotunjite */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* umbră ușoară */
+  width: 280px; /* lățime fixă card */
+  transition: transform 0.3s, box-shadow 0.3s; /* animație hover */
 }
 
+/* Hover card */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-5px); /* ridică cardul */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* umbră mai pronunțată */
 }
 
+/* Titlu card */
 .card h3 {
-  color: #ff6600;
-  margin-bottom: 10px;
+  color: #ff6600; /* culoare titlu mic */
+  margin-bottom: 10px; /* spațiu sub titlu */
 }
 
 /* ======= Galerie ======= */
+/* Grid responsive pentru imagini */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
+  display: grid; /* grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* coloane responsive */
+  gap: 15px; /* spațiu între imagini */
+  margin-top: 30px; /* spațiu deasupra galeriei */
 }
 
+/* Imagine din galerie */
 .gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  width: 100%; /* ocupă lățimea coloanei */
+  border-radius: 10px; /* colțuri rotunjite */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* umbră imagine */
 }
 
-/* ======= Formular contact ======= */
+/* ======= Formular contact / donații ======= */
+/* Container form */
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: 0 auto 30px;
+  display: flex; /* folosește flex pentru layout vertical */
+  flex-direction: column; /* coloane verticale */
+  gap: 15px; /* distanță între inputuri */
+  max-width: 500px; /* lățime maximă form */
+  margin: 0 auto 30px; /* poziționare centrală și spațiu jos */
 }
 
+/* Input și textarea */
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
+  padding: 12px; /* spațiu interior */
+  border: 1px solid #ccc; /* bordură ușoară */
+  border-radius: 8px; /* colțuri rotunjite */
+  font-size: 15px; /* mărimea textului din input */
 }
 
+/* Buton form */
 .contact-form button {
-  background-color: #0057b7;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
+  background-color: #0057b7; /* culoare buton submit */
+  color: white; /* culoare text buton */
+  border: none; /* fără bordură */
+  padding: 12px; /* spațiu interior buton */
+  border-radius: 8px; /* colțuri rotunjite */
+  cursor: pointer; /* cursor pointer la hover */
+  font-weight: 600; /* grosime text */
+  transition: background 0.3s; /* tranziție la hover */
 }
 
 .contact-form button:hover {
-  background-color: #0045a3;
+  background-color: #0045a3; /* culoare buton la hover */
 }
 
 /* ======= Footer ======= */
+/* Stil simplu pentru footer */
 footer {
-  background-color: #222;
-  color: #ddd;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  background-color: #222; /* fundal închis */
+  color: #ddd; /* text deschis */
+  text-align: center; /* text centrat */
+  padding: 20px; /* spațiu interior footer */
+  font-size: 14px; /* mărime text footer */
 }
 
 /* ======= Responsive ======= */
+/* Reguli pentru ecrane mici */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column; /* pune elementele pe verticală */
+    text-align: center; /* centrează textul */
     padding: 15px 20px; /* padding mai mic pe mobil */
-    max-width: 100%; /* ocupa tot ecranul */
-    margin: 0; /* fara centrare pe mobil */
+    max-width: 100%; /* ocupă toată lățimea */
+    margin: 0; /* elimină centrare pe mobil */
   }
 
   .navbar ul {
-    flex-direction: column;
+    flex-direction: column; /* meniul desktop devine coloană dacă e vizibil */
   }
 
   .navbar ul li {
-    margin: 10px 0;
+    margin: 10px 0; /* spațiu vertical între linkuri */
   }
 
   .hero h2 {
-    font-size: 28px;
+    font-size: 36px; /* titlu mai mic pe mobil */
   }
 
   .hero p {
-    font-size: 16px;
+    font-size: 20px; /* text mai mic pe mobil */
   }
 
   .cards {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* carduri pe verticală pe mobil */
+    align-items: center; /* centrează cardurile */
   }
 }
+
 /* ======= Meniu mobil ======= */
+/* Butonul burger ascuns pe desktop */
 .navbar .burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
+  display: none; /* ascunde pe desktop */
+  cursor: pointer; /* cursor pointer pentru burger */
+  flex-direction: column; /* liniuțele stau vertical */
+  gap: 5px; /* spațiu între linii */
+align-self: center; /* se aliniază vertical cu logo + text */
+
 }
 
+/* Liniile burger */
 .navbar .burger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: all 0.3s;
+  width: 25px; /* lățime linie */
+  height: 3px; /* înălțime linie */
+  background-color: white; /* culoare linie */
+  transition: all 0.3s; /* tranziții la transformări */
 }
 
+/* Meniul mobil ascuns implicit */
 .navbar ul.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background-color: #0057b7;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 200px;
-  padding: 15px;
-  border-radius: 0 0 0 8px;
+  display: none; /* ascuns până se adaugă clasa .show */
+  flex-direction: column; /* linkuri verticale */
+  background-color: #0057b7; /* fundal meniu mobil */
+  position: absolute; /* poziționare peste conținut */
+  top: 70px; /* poziție de sus față de viewport */
+  right: 0; /* aliniere la dreapta */
+  width: 200px; /* lățime meniu mobil */
+  padding: 15px; /* padding interior */
+  border-radius: 0 0 0 8px; /* colț rotunjit jos-stânga */
+  z-index: 999; /* afișare deasupra altor elemente */
 }
 
+/* Spațiere elemente din meniul mobil */
 .navbar ul.mobile-menu li {
-  margin: 10px 0;
+  margin: 10px 0; /* spațiu vertical între linkuri */
 }
 
+/* Clasa care afișează meniul mobil */
 .navbar ul.mobile-menu.show {
-  display: flex;
+  display: flex; /* afișează meniul când are clasa .show */
 }
 
+/* Activează burger-ul pe ecrane mici */
 @media (max-width: 768px) {
   .navbar ul {
-    display: none;
+    display: none; /* ascunde meniul desktop pe mobil */
   }
   .navbar .burger {
-    display: flex;
+    display: flex; /* arată burger-ul pe mobil */
   }
 }
+
 /* ======= Lightbox Galerie ======= */
-/* ====== Lightbox Galerie centrata ====== */
+/* Container pentru lightbox (ascuns implicit) */
 #lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
+  position: fixed; /* fix față de fereastră */
+  top: 0; /* sus 0 */
+  left: 0; /* stânga 0 */
+  width: 100vw; /* lățime întreagă a viewport-ului */
+  height: 100vh; /* înălțime întreagă a viewport-ului */
+  background-color: rgba(0,0,0,0.9); /* fundal semi-opac */
+  display: flex; /* folosește flex pentru centrare */
+  align-items: center; /* centru vertical */
+  justify-content: center; /* centru orizontal */
+  visibility: hidden; /* ascuns inițial */
+  opacity: 0; /* transparent inițial */
+  transition: opacity 0.3s ease; /* tranziție pentru apariție */
+  z-index: 9999; /* deasupra tuturor */
 }
 
+/* Clasă care arată lightbox-ul */
 #lightbox.show {
-  visibility: visible;
-  opacity: 1;
+  visibility: visible; /* face vizibil */
+  opacity: 1; /* complet opac */
 }
 
+/* Imaginea din lightbox */
 #lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
+  max-width: 90%; /* nu depășește 90% din lățimea ferestrei */
+  max-height: 90%; /* nu depășește 90% din înălțimea ferestrei */
+  border-radius: 10px; /* colțuri rotunjite */
+  box-shadow: 0 0 20px rgba(255,255,255,0.3); /* efect glow */
+  transform: scale(0.9); /* ușoară scalare la inițializare */
+  transition: transform 0.3s ease; /* tranziție pentru scalare */
 }
 
+/* Imaginea devine normală când lightbox e activ */
 #lightbox.show img {
-  transform: scale(1);
+  transform: scale(1); /* readuce la dimensiune normală */
 }
 
+/* Butoane din lightbox */
 #lightbox .close,
 #lightbox .prev,
 #lightbox .next {
-  position: absolute;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.3s;
+  position: absolute; /* poziționare absolută în interiorul lightbox */
+  color: white; /* culoare butoane */
+  font-size: 40px; /* mărime text */
+  font-weight: bold; /* grosime text */
+  cursor: pointer; /* cursor pointer */
+  user-select: none; /* împiedică selectarea textului */
+  transition: color 0.3s; /* tranziție la hover */
 }
 
+/* Buton închidere */
 #lightbox .close {
-  top: 25px;
-  right: 35px;
+  top: 25px; /* distanță de sus */
+  right: 35px; /* distanță de la dreapta */
 }
 
+/* Buton anterior */
 #lightbox .prev {
-  top: 50%;
-  left: 25px;
-  transform: translateY(-50%);
+  top: 50%; /* centrat vertical */
+  left: 25px; /* poziționat la stânga */
+  transform: translateY(-50%); /* corectează centrare verticală */
 }
 
+/* Buton următor */
 #lightbox .next {
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
+  top: 50%; /* centrat vertical */
+  right: 25px; /* poziționat la dreapta */
+  transform: translateY(-50%); /* corectează centrare verticală */
 }
 
+/* Hover pentru butoanele lightbox */
 #lightbox .close:hover,
 #lightbox .prev:hover,
 #lightbox .next:hover {
-  color: #ff6600;
+  color: #ff6600; /* schimbă culoarea la hover */
 }
 
+
 /* Desktop menu ascuns pe mobil */
+/* ======= Versiune mobil cu animatie ======= */
 @media (max-width: 768px) {
+  /* Ascunde meniul desktop pe mobil */
   .desktop-menu {
     display: none;
   }
 
+  /* Stil pentru butonul burger (cele 3 linii) */
   .burger {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    position: absolute; /* permite pozitionarea libera */
+    right: 20px; /* muta burger-ul in partea dreapta */
+    top: 25px; /* pozitioneaza burger-ul fata de marginea de sus */
+    z-index: 1001; /* asigura ca ramane deasupra meniului */
   }
 
+  /* Stil pentru fiecare linie din burger */
   .burger div {
     width: 25px;
     height: 3px;
@@ -360,64 +460,144 @@ footer {
     transition: all 0.3s;
   }
 
+  /* Meniul mobil (ascuns implicit) */
   .mobile-menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: #0057b7;
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 65px; /* incepe sub burger */
+    right: 15px; /* aliniat cu burger-ul */
     width: 200px;
     padding: 15px;
-    border-radius: 0 0 0 8px;
-    z-index: 999;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    max-height: 0; /* ascunde continutul complet */
+    overflow: hidden; /* ascunde ce depaseste inaltimea */
+    opacity: 0; /* invizibil initial */
+    transition: max-height 0.4s ease, opacity 0.3s ease; /* animatie lina */
   }
 
+  /* Cand se apasa burger-ul, meniul aluneca in jos */
   .mobile-menu.show {
-    display: flex;
+    max-height: 400px; /* inaltime suficienta pentru elemente */
+    opacity: 1; /* devine vizibil */
   }
 
+  /* Spatiere intre elementele meniului */
   .mobile-menu li {
     margin: 10px 0;
   }
 
+  /* Stil pentru linkurile din meniu */
   .mobile-menu li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 16px;
+    transition: opacity 0.3s;
   }
 
+  /* Efect la hover */
   .mobile-menu li a:hover {
     opacity: 0.8;
   }
 }
 
+
 /* Desktop menu vizibil pe desktop */
 @media (min-width: 769px) {
   .burger {
-    display: none;
+    display: none; /* ascunde burger pe desktop */
   }
 }
 
 /* ======= Buton sectiuni vezi mai mult din index.html======= */
 .section .btn {
-  display: inline-block;
+  display: inline-block; /* afișare inline dar acceptă padding */
   margin-top: 20px; /* distanța dintre text și buton */
-  padding: 10px 25px;
-  background-color: #ff6600;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  padding: 10px 25px; /* spațiu interior buton */
+  background-color: #ff6600; /* culoare fundal buton */
+  color: #fff; /* culoare text buton */
+  text-decoration: none; /* fără subliniere */
+  border-radius: 5px; /* rotunjire colțuri buton */
+  transition: background-color 0.3s; /* tranziție la hover */
 }
 
 .section .btn:hover {
-  background-color: #e65c00;
+  background-color: #0959c2; /* culoare buton la hover */
 }
+
 .navbar-line {
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #ff6600, #0057b7);
-  border-radius: 2px;
-  margin-bottom: 0px; /* distanta fata de hero */
+  width: 100%; /* linia ocupă toată lățimea paginii */
+  height: 4px; /* înălțimea liniei */
+  background: linear-gradient(90deg, #ff6600, #0057b7); /* gradient linie */
+  border-radius: 2px; /* colțuri ușor rotunjite */
+  margin-bottom: 0px; /* distanță față de elementul următor */
+}
+/* ======= Stiluri Culoare si Hover Butoane Pagini ======= */
+.desktop-menu a {
+  color: white; /* culoarea textului normal */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px; /* AICI modifici dimensiunea textului */
+  transition: color 0.5s; /* efect de tranziție lină */
+}
+
+.desktop-menu a:hover {
+  color: #0057b7; /* CULOAREA LA HOVER – o poți schimba aici */
+  transition: 0.3s; /* efect de tranziție lină */
+}
+/* Submeniu Desktop */
+.desktop-menu .has-submenu {
+  position: relative;
+}
+
+.desktop-menu .has-submenu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0057b7;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.desktop-menu .has-submenu:hover .submenu {
+  display: block;
+}
+
+.desktop-menu .has-submenu .submenu li {
+  margin: 0;
+}
+
+.desktop-menu .has-submenu .submenu li a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  font-size: 16px;
+}
+
+.desktop-menu .has-submenu .submenu li a:hover {
+  background-color: #ff6600;
+}
+
+/* Submeniu Mobile - deja avem JS care face toggle */
+.mobile-menu .has-submenu .submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.mobile-menu .has-submenu.open .submenu {
+  display: flex;
+}
+.desktop-menu .has-submenu span {
+  cursor: default; /* cursor normal, nu pointer */
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
 }

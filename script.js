@@ -123,3 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
+// Toggle submeniuri mobile
+document.querySelectorAll('.mobile-menu .has-submenu > a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const parent = link.parentElement;
+    parent.classList.toggle('open');
+  });
+});
+
+// Toggle meniul principal mobile
+const burger = document.querySelector('.burger');
+const mobileMenu = document.querySelector('.mobile-menu');
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('show');
+});

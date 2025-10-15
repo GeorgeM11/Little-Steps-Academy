@@ -3,55 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Little Steps Academy</title>
+  <title>Terapia 3C - Little Steps Academy</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Navbar identic pe toate paginile -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-      <img src="images/logo.jpg" alt="Logo">
-      <div class="logo-text">
-        <div class="logo-left">
-          <span>Little</span>
-          <span>Steps</span>
-        </div>
-        <div class="logo-right">Academy</div>
-      </div>
+  <img src="images/logo.jpg" alt="Logo">
+  <div class="logo-text">
+    <div class="logo-left">
+      <span>Little</span>
+      <span>Steps</span>
     </div>
+    <div class="logo-right">
+      Academy
+    </div>
+  </div>
+</div>
 
     <ul class="desktop-menu">
       <li><a href="index.html">Acasă</a></li>
-
       <li class="has-submenu">
-        <span>Despre noi</span>
-        <ul class="submenu">
-          <li><a href="misiunea.html">Misiunea Noastra</a></li>
+  <span>Despre noi</span> <!-- schimbăm <a> cu <span>, deci nu e clicabil -->
+  <ul class="submenu">
+    <li><a href="misiunea.html">Misiunea Noastra</a></li>
     <li><a href="rezultate.html">Rezultate</a></li>
     <li><a href="echipa.html">Echipa</a></li>
-        </ul>
-      </li>
-
-      <li class="has-submenu">
-        <span>Resurse</span>
-        <ul class="submenu">
-          <li><a href="despre-autism.html">Despre Autism</a></li>
-          <li><a href="articole.html">Articole</a></li>
-          <li><a href="legislatie.html">Legislatie</a></li>
-        </ul>
-      </li>
-
-      <li class="has-submenu">
-        <span>Programe</span>
-        <ul class="submenu">
-          <li><a href="evaluare.html">Evaluare</a></li>
-          <li><a href="terapia-aba.html">Terapia ABA</a></li>
-          <li><a href="terapia-3c.html">Terapia 3C</a></li>
-          <li><a href="psihoterapie.html">Psihoterapie</a></li>
-        </ul>
-      </li>
-
+  </ul>
+</li>
+<!-- Meniu nou: Resurse (cu 3 submeniuri active) -->
+    <li class="has-submenu">
+      <span>Resurse</span>
+      <ul class="submenu">
+        <li><a href="despre-autism.html">Despre Autism</a></li>
+        <li><a href="articole.html">Articole</a></li>
+        <li><a href="legislatie.html">Legislatie</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <span>Programe</span>
+      <ul class="submenu">
+        <li><a href="evaluare.html">Evaluare</a></li>
+        <li><a href="terapia-aba.html">Terapia ABA</a></li>
+        <li><a href="terapia-3c.html">Terapia 3C</a></li>
+        <li><a href="psihoterapie.html">Psihoterapie</a></li>
+      </ul>
+    </li>
       <li><a href="activities.html">Activități</a></li>
       <li><a href="gallery.html">Galerie</a></li>
       <li><a href="doneaza.html">Donează</a></li>
@@ -64,8 +63,7 @@
       <div></div>
     </div>
 
-
-  <ul class="mobile-menu">
+    <ul class="mobile-menu">
   <li><a href="index.html">Acasă</a></li>
 
   <li class="has-submenu">
@@ -103,26 +101,14 @@
 </ul>
 
   </header>
-<div class="navbar-line"></div>
-  <main class="section contact">
-  <h2>Contact</h2>
-  <form class="contact-form">
-    <input type="text" name="nume" placeholder="Nume complet" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="mesaj" placeholder="Mesajul tau" required></textarea>
-    <button type="submit">Trimite</button>
-  </form>
+  <div class="navbar-line"></div>
 
-  <div class="contact-info">
-    <h3>Contact direct pentru evaluare și terapie:</h3>
-    <p><span class="phone-icon">📞</span> Salajean Larisa: <a href="tel:+40752902363">0752 902 363</a></p>
-    <p><span class="phone-icon">📞</span> Bila Ioana: <a href="tel:+40763154911">0763 154 911</a></p>
-
-    <h3>Contabilitate și contracte:</h3>
-    <p><span class="phone-icon">📞</span> Tripa Alexia: <a href="tel:+40746372883">0746 372 883</a></p>
-  </div>
-</main>
-
+  <!-- Sectiunea principala -->
+  <section class="section">
+    <h2>Terapia 3C</h2>
+    <p>Terapia 3C (Conectare, Comunicare, Cooperare) pune accent pe relationare si pe construirea increderii intre copil si terapeut.</p>
+    <p>Scopul este dezvoltarea abilitatilor emotionale si sociale prin jocuri, activitati interactive si strategii de invatare pozitiva.</p>
+  </section>
 
   <footer>
     <p>&copy; 2025 Little Steps Academy. Toate drepturile rezervate.</p>
