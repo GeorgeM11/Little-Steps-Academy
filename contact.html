@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Contact - Little Steps Academy</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
@@ -101,11 +102,16 @@
   <li><a href="doneaza.html">Donează</a></li>
   <li><a href="contact.html">Contact</a></li>
 </ul>
-
   </header>
-<div class="navbar-line"></div>
-  <main class="section contact">
+  <div class="navbar-line"></div>
+
+<section class="section contact">
   <h2>Contact</h2>
+  <div class="contact-container">
+
+    <!-- Coloana stânga: formular + date de contact -->
+    <div class="contact-left card">
+  <h3>Trimite-ne un mesaj</h3>
   <form class="contact-form">
     <input type="text" name="nume" placeholder="Nume complet" required>
     <input type="email" name="email" placeholder="Email" required>
@@ -114,18 +120,21 @@
   </form>
 
   <div class="contact-info">
-    <h3>Contact direct pentru evaluare și terapie:</h3>
-    <p><span class="phone-icon">📞</span> Salajean Larisa: <a href="tel:+40752902363">0752 902 363</a></p>
-    <p><span class="phone-icon">📞</span> Bila Ioana: <a href="tel:+40763154911">0763 154 911</a></p>
+    <h3>Date de contact:</h3>
+    <p><i class="fa fa-map-marker"></i> Locație: Sânmartin de Beiuș</p>
+    <p><i class="fa fa-envelope"></i> Email: <a href="mailto:contact@littlestepsacademy.ro">contact@littlestepsacademy.ro</a></p>
+    <p>Contact direct pentru evaluare si terapie:</p>
+    <p><i class="fa fa-phone"></i> Salajean Larisa: <a href="tel:+40752902363">0752 902 363</a></p>
+    <p><i class="fa fa-phone"></i> Bila Ioana: <a href="tel:+40763154911">0763 154 911</a></p>
+    <p>Contabilitate și contracte:</p>
+    <p><i class="fa fa-phone"></i> Tripa Alexia: <a href="tel:+40746372883">0746 372 883</a></p>
 
-    <h3>Contabilitate și contracte:</h3>
-    <p><span class="phone-icon">📞</span> Tripa Alexia: <a href="tel:+40746372883">0746 372 883</a></p>
+    <h4>Urmărește-ne</h4>
+    <div class="social-buttons">
+      <a href="https://www.facebook.com/p/Little-Steps-Academy-61565452525923/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/littlesteps_ro/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
-</main>
+</div>
 
 
-  <footer>
-    <p>&copy; 2025 Little Steps Academy. Toate drepturile rezervate.</p>
-  </footer>
-</body>
-</html>
