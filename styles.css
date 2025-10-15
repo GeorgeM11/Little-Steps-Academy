@@ -697,3 +697,36 @@ align-self: center; /* se aliniază vertical cu logo + text */
   transform: scale(1.1); /* efect hover */
 }
 
+/* Buton contact cu iconiță în index.html */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* spațiu între iconiță și text */
+  padding: 12px 25px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #e65c00;
+}
+
+.contact-btn i {
+  font-size: 18px; /* dimensiunea iconiței */
+}
+/* Buton contact responsive pentru mobil */
+@media (max-width: 768px) {
+  .contact-btn {
+    padding: 16px 30px; /* mai mare */
+    font-size: 18px;    /* text mai mare */
+    gap: 12px;          /* mai mult spațiu între iconiță și text */
+  }
+
+  .contact-btn i {
+    font-size: 22px;    /* iconiță mai mare */
+  }
+} /*sfarsit stil buton contact mobil */
