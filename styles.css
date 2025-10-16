@@ -229,7 +229,8 @@ body {
   display: flex; /* folosește flex pentru layout vertical */
   flex-direction: column; /* coloane verticale */
   gap: 15px; /* distanță între inputuri */
-  max-width: 500px; /* lățime maximă form */
+  width: 90%; /* Ocupă întreaga lățime a containerului */
+  max-width: 400px; /* lățime maximă form */
   margin: 0 auto 30px; /* poziționare centrală și spațiu jos */
 }
 
