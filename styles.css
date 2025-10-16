@@ -115,7 +115,7 @@ body {
   position: relative;
   overflow: hidden;
   color: white;
-  background: linear-gradient(135deg, #044e97 0%, #5e7e99 25%, #a67c7c 50%, #c97a2e 75%, #ff6600 100%);
+  background: linear-gradient(135deg, #044e97 0%, #497599 25%, #a67c7c 50%, #c97a2e 75%, #ff6600 100%);
   text-align: center;
   padding: 100px 20px;
   z-index: 0;
@@ -131,12 +131,12 @@ body {
 }
 
 /* Culori diferite */
-.dot  { background-color: rgba(255, 83, 4, 0.801); top: 20%; left: 10%; animation-delay: 0s; }
-.dot1 { background-color: rgba(8, 123, 245, 0.445); top: 40%; left: 80%; animation-delay: 3s; }
-.dot2 { background-color: rgba(255, 204, 0, 0.4); top: 70%; left: 30%; animation-delay: 2s; }
-.dot3 { background-color: rgba(255, 0, 102, 0.4); top: 25%; left: 60%; animation-delay: 1s; }
+.dot  { background-color: rgba(255, 84, 4, 0.623); top: 20%; left: 10%; animation-delay: 0s; }
+.dot1 { background-color: rgba(8, 123, 245, 0.507); top: 40%; left: 80%; animation-delay: 3s; }
+.dot2 { background-color: rgba(234, 0, 255, 0.4); top: 70%; left: 30%; animation-delay: 2s; }
+.dot3 { background-color: rgba(215, 238, 7, 0.534); top: 25%; left: 60%; animation-delay: 1s; }
 .dot4 { background-color: rgba(0, 255, 153, 0.4); top: 55%; left: 50%; animation-delay: 0s; }
-.dot5 { background-color: rgba(102, 0, 255, 0.4); top: 80%; left: 75%; animation-delay: 1s; }
+.dot5 { background-color: rgba(0, 44, 238, 0.4); top: 80%; left: 75%; animation-delay: 1s; }
 .dot6 { background-color: rgba(240, 7, 7, 0.4); top: 10%; left: 40%; animation-delay: 2s; }
 
 /* Mișcare + pulsare combinate */
@@ -148,7 +148,6 @@ body {
   100% { transform: translate(0,0) scale(1.2); }
 }
 
-
 /* Limită lățime conținut hero și centrare */
 .hero-content {
   max-width: 800px; /* lățime maximă conținut */
@@ -159,6 +158,8 @@ body {
 .hero h2 {
   font-size: 44px; /* mărimea titlului principal */
   margin-bottom: 15px; /* spațiu sub titlu */
+  text-shadow: 6px 8px 12px rgba(0, 0, 0, 0.2);
+
 }
 
 /* Paragraf hero */
@@ -166,6 +167,8 @@ body {
   font-size: 22px; /* mărimea textului din hero */
   margin-bottom: 25px; /* spațiu sub paragraf */
   font-weight: bold;
+  text-shadow: 3px 5px 7px rgba(0, 0, 0, 0.15);
+
 }
 
 /* Butoane generale */
