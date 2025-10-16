@@ -400,11 +400,13 @@ footer {
 
 .mobile-menu .has-submenu .submenu li a {
   color: #fff; /* Culoare text submeniuri */
-  font-size: 15px; /* Dimensiune text submeniuri */
+  font-size: 17px; /* Dimensiune text submeniuri */
   padding: 2px 4px; /* Spațiu interior pentru linkuri */
   display: block; /* Fiecare link pe un rând */
   border-radius: 4px; /* Colțuri rotunjite pentru linkuri */
   transition: background-color 0.3s; /* Tranziție pentru hover */
+  margin-bottom: -10px; /* Adaugă spațiu între elementele submeniului */
+
 }
 
 .mobile-menu .has-submenu .submenu li a:hover {
@@ -569,13 +571,13 @@ footer {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     transition: opacity 0.3s;
   }
 
   /* Stil pentru butoanele cu submeniuri */
 .mobile-menu .has-submenu > span {
-  font-size: 18px; /* Dimensiunea textului (la fel ca linkurile) */
+  font-size: 20px; /* Dimensiunea textului (la fel ca linkurile) */
   font-weight: 600; /* Text mai îngroșat */
   color: white; /* Culoarea textului */
   padding: 0px 0; /* Spațiu între butoane */

@@ -117,11 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const submenuToggles = mobileMenu.querySelectorAll('.has-submenu > span');
     submenuToggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
-        const parent = toggle.parentElement;
-        parent.classList.toggle('open'); // Activează/dezactivează submeniul
+        // Închide toate submeniurile deschise
+        mobileMenu.querySelectorAll('.has-submenu.open').forEach(openSubmenu => {
+          if (openSubmenu !== toggle.parentElement) {
+            openSubmenu.classList.remove('open');
+          }
+        });
+// Deschide/închide submeniul selectat
+        toggle.parentElement.classList.toggle('open');
       });
     });
-
+  
     // Închide meniul mobil la click pe un link
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
