@@ -110,13 +110,44 @@ body {
 
 /* ======= Secțiunea principală (hero) ======= */
 /* Fundal, aliniere și paddings pentru zona principală */
+/* Fundal animat dots - versiune naturală */
 .hero {
-  background: linear-gradient(to right, rgba(0, 87, 183, 0.85), rgba(255, 102, 0, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
-  /* combinație gradient + imagine, centrată și acoperire completă */
-  color: white; /* text alb pe hero */
-  text-align: center; /* text centrat */
-  padding: 100px 20px; /* spațiu interior mare pentru efect vizual */
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: linear-gradient(135deg, #1e5a96 0%, #6b7f8f 25%, #a67c7c 50%, #c97a2e 75%, #ff6600 100%);
+  text-align: center;
+  padding: 100px 20px;
+  z-index: 0;
 }
+
+
+.dot, .dot1, .dot2, .dot3, .dot4, .dot5, .dot6{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: movePulse 6s linear infinite;
+}
+
+/* Culori diferite */
+.dot  { background-color: rgba(255, 102, 0, 0.4); top: 20%; left: 10%; animation-delay: 0s; }
+.dot1 { background-color: rgba(0, 87, 183, 0.4); top: 40%; left: 80%; animation-delay: 3s; }
+.dot2 { background-color: rgba(255, 204, 0, 0.4); top: 70%; left: 30%; animation-delay: 2s; }
+.dot3 { background-color: rgba(255, 0, 102, 0.4); top: 25%; left: 60%; animation-delay: 1s; }
+.dot4 { background-color: rgba(0, 255, 153, 0.4); top: 55%; left: 50%; animation-delay: 0s; }
+.dot5 { background-color: rgba(102, 0, 255, 0.4); top: 80%; left: 75%; animation-delay: 1s; }
+.dot6 { background-color: rgba(240, 7, 7, 0.4); top: 10%; left: 40%; animation-delay: 2s; }
+
+/* Mișcare + pulsare combinate */
+@keyframes movePulse {
+  0%   { transform: translate(0,0) scale(1.3); }
+  25%  { transform: translate(50px, -30px) scale(1.6); }
+  50%  { transform: translate(-40px, 40px) scale(1.3); }
+  75%  { transform: translate(30px, -20px) scale(1.5); }
+  100% { transform: translate(0,0) scale(1.2); }
+}
+
 
 /* Limită lățime conținut hero și centrare */
 .hero-content {
@@ -230,7 +261,7 @@ body {
   flex-direction: column; /* coloane verticale */
   gap: 15px; /* distanță între inputuri */
   width: 90%; /* Ocupă întreaga lățime a containerului */
-  max-width: 400px; /* lățime maximă form */
+  max-width: 500px; /* lățime maximă form */
   margin: 0 auto 30px; /* poziționare centrală și spațiu jos */
 }
 
@@ -828,4 +859,44 @@ footer {
     width: 100%; /* Imaginile ocupă lățimea completă a celulei */
     height: auto; /* Păstrează proporțiile */
   }
+}
+.accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff9800, #ff6f00);
+            margin: 25px auto;
+            border-radius: 2px;
+        }
+
+/* ======= Animatii hero ======= */
+/* ======= Animatii hero fara estompare fundal ======= */
+.hero h2, .hero p, .hero .btn {
+  opacity: 0;           
+  transform: translateY(30px); 
+  transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+
+/* Clasa activă pentru animație */
+.hero.animate h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.hero.animate p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.hero.animate .btn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+/* Animatie subtila pentru buton la hover */
+.hero .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
