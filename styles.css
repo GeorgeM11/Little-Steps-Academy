@@ -484,6 +484,19 @@ footer {
     transition: all 0.3s;
   }
 
+  /* Stilul pentru "X" */
+.burger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Prima linie devine diagonală */
+}
+
+.burger.open div:nth-child(2) {
+  opacity: 0; /* A doua linie devine invizibilă */
+}
+
+.burger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* A treia linie devine diagonală */
+}
+
   /* Meniul mobil (ascuns implicit) */
   .mobile-menu {
     display: flex;
@@ -500,13 +513,15 @@ footer {
     max-height: 0; /* ascunde continutul complet */
     overflow: hidden; /* ascunde ce depaseste inaltimea */
     opacity: 0; /* invizibil initial */
-    transition: max-height 0.4s ease, opacity 0.3s ease; /* animatie lina */
+    transition: transform 0.8s ease; /* Tranziție lină pentru glisare */
   }
 
   /* Cand se apasa burger-ul, meniul aluneca in jos */
   .mobile-menu.show {
-    max-height: 400px; /* inaltime suficienta pentru elemente */
+    max-height: 350px; /* inaltime suficienta pentru elemente */
     opacity: 1; /* devine vizibil */
+    transform: translateX(0); /* Aduce meniul în poziția vizibilă */
+
   }
 
   /* Spatiere intre elementele meniului */
@@ -519,9 +534,19 @@ footer {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     transition: opacity 0.3s;
   }
+
+  /* Stil pentru butoanele cu submeniuri */
+.mobile-menu .has-submenu > span {
+  font-size: 18px; /* Dimensiunea textului (la fel ca linkurile) */
+  font-weight: 600; /* Text mai îngroșat */
+  color: white; /* Culoarea textului */
+  padding: 0px 0; /* Spațiu între butoane */
+  display: block; /* Fiecare buton pe un rând */
+  cursor: pointer; /* Cursor pointer pentru a indica că este clicabil */
+}
 
   /* Efect la hover */
   .mobile-menu li a:hover {
@@ -600,9 +625,9 @@ footer {
 
 .desktop-menu .has-submenu .submenu li a {
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .desktop-menu .has-submenu .submenu li a:hover {
@@ -758,7 +783,7 @@ footer {
 /* Adaugă săgeată pentru elementele cu submeniu */
 .desktop-menu li.has-submenu > span::after {
   content: "▼"; /* săgeată jos */
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 5px;
   display: inline-block;
   transition: transform 0.3s ease;
@@ -766,9 +791,9 @@ footer {
 
 /* Adaugă o săgeată sau bulină pentru submeniuri */
 .mobile-menu .has-submenu .submenu li a::before {
-  content: "•"; /* Poți înlocui "•" cu "→" pentru o săgeată */
+  content: "→"; /* Poți înlocui "•" cu "→" pentru o săgeată */
   color: #ff6600; /* Culoarea săgeții sau bulinei */
-  font-size: 14px; /* Dimensiunea săgeții sau bulinei */
+  font-size: 16px; /* Dimensiunea săgeții sau bulinei */
   margin-right: 8px; /* Spațiu între săgeată/bulină și text */
   display: inline-block; /* Asigură alinierea corectă */
 }

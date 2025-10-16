@@ -107,8 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.querySelector('.mobile-menu');
 
   if (burger && mobileMenu) {
+    // Toggle meniul mobil și starea butonului burger
     burger.addEventListener('click', () => {
       mobileMenu.classList.toggle('show');
+      burger.classList.toggle('open'); // Adaugă/Elimină clasa pentru "X"
     });
 
   // Submeniuri
