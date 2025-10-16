@@ -23,6 +23,8 @@ body {
 .navbar .logo {
   display: flex; /* face logo și titlu pe aceeași linie */
   align-items: center; /* aliniere verticală centru pentru logo + text */
+  text-decoration: none; /* Elimină sublinierea implicită a linkurilor */
+  color: inherit; /* Păstrează culoarea textului */
 }
 
 /* Wrapper text logo */
@@ -42,7 +44,7 @@ body {
 
 /* Academy mare, în dreapta */
 .logo-right {
-  font-size: 40px; /* mai mare decât Little Steps */
+  font-size: 35px; /* mai mare decât Little Steps */
   font-weight: 700;
   display: flex;
   align-items: center; /* centru vertical față de Little Steps */
@@ -50,7 +52,7 @@ body {
 
 /* Stil pentru Little Steps */
 .logo-left span {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   text-align: left; /* text aliniat stânga */
 }
@@ -209,7 +211,7 @@ body {
 /* Grid responsive pentru imagini */
 .gallery-grid {
   display: grid; /* grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* coloane responsive */
+  grid-template-columns: repeat(4, 1fr); /* Trei coloane egale */  
   gap: 15px; /* spațiu între imagini */
   margin-top: 30px; /* spațiu deasupra galeriei */
 }
@@ -306,7 +308,7 @@ footer {
   cursor: pointer; /* cursor pointer pentru burger */
   flex-direction: column; /* liniuțele stau vertical */
   gap: 5px; /* spațiu între linii */
-align-self: center; /* se aliniază vertical cu logo + text */
+  align-self: center; /* se aliniază vertical cu logo + text */
 
 }
 
@@ -320,16 +322,17 @@ align-self: center; /* se aliniază vertical cu logo + text */
 
 /* Meniul mobil ascuns implicit */
 .navbar ul.mobile-menu {
-  display: none; /* ascuns până se adaugă clasa .show */
-  flex-direction: column; /* linkuri verticale */
-  background-color: #0057b7; /* fundal meniu mobil */
-  position: absolute; /* poziționare peste conținut */
-  top: 70px; /* poziție de sus față de viewport */
-  right: 0; /* aliniere la dreapta */
-  width: 200px; /* lățime meniu mobil */
-  padding: 15px; /* padding interior */
-  border-radius: 0 0 0 8px; /* colț rotunjit jos-stânga */
-  z-index: 999; /* afișare deasupra altor elemente */
+  display: flex;
+  flex-direction: column;
+  background-color: #0057b7;
+  position: fixed; /* fix fata de viewport */
+  top: 0;
+  right: -100%; /* ascuns initial */
+  height: 100%;
+  width: 50%;
+  padding: 60px 10px;
+  transition: right 0.4s ease;
+  z-index: 999;
 }
 
 /* Spațiere elemente din meniul mobil */
@@ -339,7 +342,7 @@ align-self: center; /* se aliniază vertical cu logo + text */
 
 /* Clasa care afișează meniul mobil */
 .navbar ul.mobile-menu.show {
-  display: flex; /* afișează meniul când are clasa .show */
+  right: 0; /* afișează meniul când are clasa .show */
 }
 
 /* Activează burger-ul pe ecrane mici */
@@ -350,6 +353,27 @@ align-self: center; /* se aliniază vertical cu logo + text */
   .navbar .burger {
     display: flex; /* arată burger-ul pe mobil */
   }
+}
+
+/* Submeniuri - culoare diferită */
+.mobile-menu .has-submenu .submenu {
+  background-color: #0045a3; /* Culoare diferită pentru submeniuri */
+  border-radius: 5px; /* Colțuri rotunjite pentru submeniuri */
+  padding: 10px; /* Spațiu interior pentru submeniuri */
+  
+}
+
+.mobile-menu .has-submenu .submenu li a {
+  color: #fff; /* Culoare text submeniuri */
+  font-size: 15px; /* Dimensiune text submeniuri */
+  padding: 2px 4px; /* Spațiu interior pentru linkuri */
+  display: block; /* Fiecare link pe un rând */
+  border-radius: 4px; /* Colțuri rotunjite pentru linkuri */
+  transition: background-color 0.3s; /* Tranziție pentru hover */
+}
+
+.mobile-menu .has-submenu .submenu li a:hover {
+  background-color: #ff6600; /* Culoare la hover pentru linkuri */
 }
 
 /* ======= Lightbox Galerie ======= */
@@ -740,6 +764,15 @@ align-self: center; /* se aliniază vertical cu logo + text */
   transition: transform 0.3s ease;
 }
 
+/* Adaugă o săgeată sau bulină pentru submeniuri */
+.mobile-menu .has-submenu .submenu li a::before {
+  content: "•"; /* Poți înlocui "•" cu "→" pentru o săgeată */
+  color: #ff6600; /* Culoarea săgeții sau bulinei */
+  font-size: 14px; /* Dimensiunea săgeții sau bulinei */
+  margin-right: 8px; /* Spațiu între săgeată/bulină și text */
+  display: inline-block; /* Asigură alinierea corectă */
+}
+
 /* Rotește săgeata când submeniul apare la hover */
 .desktop-menu li.has-submenu:hover > span::after {
   transform: rotate(180deg);
@@ -756,4 +789,17 @@ align-self: center; /* se aliniază vertical cu logo + text */
 
 .mobile-menu li.has-submenu.open > span::after {
   transform: rotate(180deg);
+}
+/* Galerie pe mobil: două imagini pe rând */
+@media (max-width: 768px) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Două coloane egale */
+    gap: 10px; /* Spațiu între imagini */
+  }
+
+  .gallery-grid img {
+    width: 100%; /* Imaginile ocupă lățimea completă a celulei */
+    height: auto; /* Păstrează proporțiile */
+  }
 }

@@ -111,6 +111,22 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.toggle('show');
     });
 
+  // Submeniuri
+    const submenuToggles = mobileMenu.querySelectorAll('.has-submenu > span');
+    submenuToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const parent = toggle.parentElement;
+        parent.classList.toggle('open'); // Activează/dezactivează submeniul
+      });
+    });
+
+    // Închide meniul mobil la click pe un link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+      });
+    });  
+
     // Inchidere meniu la click pe link
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
@@ -132,9 +148,24 @@ document.querySelectorAll('.mobile-menu .has-submenu > a').forEach(link => {
   });
 });
 
-// Toggle meniul principal mobile
-const burger = document.querySelector('.burger');
-const mobileMenu = document.querySelector('.mobile-menu');
-burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show');
+// Așteaptă încărcarea completă a paginii
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.querySelector(".burger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  if (burger && mobileMenu) {
+    burger.addEventListener("click", function () {
+      burger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
+  }
+
+  // Permite submeniurile să se deschidă la atingere pe mobil
+  const submenus = document.querySelectorAll(".mobile-menu .has-submenu > span");
+  submenus.forEach(span => {
+    span.addEventListener("click", function () {
+      const submenu = this.nextElementSibling;
+      if (submenu) submenu.classList.toggle("active");
+    });
+  });
 });
