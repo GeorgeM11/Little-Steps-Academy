@@ -471,8 +471,8 @@ footer {
     gap: 5px;
     cursor: pointer;
     position: absolute; /* permite pozitionarea libera */
-    right: 20px; /* muta burger-ul in partea dreapta */
-    top: 25px; /* pozitioneaza burger-ul fata de marginea de sus */
+    left: 20px; /* muta burger-ul in partea stanga */
+    top: 40px; /* pozitioneaza burger-ul fata de marginea de sus */
     z-index: 1001; /* asigura ca ramane deasupra meniului */
   }
 
@@ -491,11 +491,11 @@ footer {
     background-color: #0057b7;
     position: absolute;
     top: 65px; /* incepe sub burger */
-    right: 15px; /* aliniat cu burger-ul */
-    width: 200px;
+    left: 15px; /* aliniat cu burger-ul */
+    width: 100px;
     padding: 15px;
     border-radius: 8px;
-    z-index: 1000;
+    z-index: 999;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     max-height: 0; /* ascunde continutul complet */
     overflow: hidden; /* ascunde ce depaseste inaltimea */
