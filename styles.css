@@ -863,10 +863,11 @@ footer {
     height: auto; /* Păstrează proporțiile */
   }
 }
+/* Linie decorativă sub titluri secțiuni */
 .accent-line {
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #ff9800, #ff6f00);
+            background: linear-gradient(90deg, #ff6f00b0, #1b5ab88c);
             margin: 25px auto;
             border-radius: 2px;
         }
