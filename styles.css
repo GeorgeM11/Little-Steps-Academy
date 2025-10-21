@@ -1467,3 +1467,163 @@ body {
 }
 
 /* ===== SFARSIT STILURI TERAPIA 3C ===== */
+
+/* ---------- HERO EVALUARE PAGE ---------- */
+.hero-evaluare-page {
+  background: linear-gradient(120deg, #6ec1e4, #2faaec);
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-evaluare-page .hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-evaluare-page h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-evaluare-page p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* ---------- ANIMATIE FUNDAL ---------- */
+.hero-evaluare-page .animated-bg .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  animation: float 15s infinite linear;
+}
+
+.hero-evaluare-page .c1 { width: 120px; height: 120px; background: #ffffff; top: 15%; left: 20%; animation-delay: 0s; }
+.hero-evaluare-page .c2 { width: 200px; height: 200px; background: #dff6ff; top: 40%; left: 70%; animation-delay: 4s; }
+.hero-evaluare-page .c3 { width: 80px; height: 80px; background: #ffffff; top: 60%; left: 10%; animation-delay: 8s; }
+.hero-evaluare-page .c4 { width: 150px; height: 150px; background: #cfe8fa; top: 25%; left: 80%; animation-delay: 12s; }
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0.25; }
+  50% { transform: translateY(-40px) scale(1.05); opacity: 0.35; }
+  100% { transform: translateY(0) scale(1); opacity: 0.25; }
+}
+
+/* ---------- STEPS SECTION ---------- */
+.evaluare-steps-page {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.evaluare-steps-page .step {
+  margin-bottom: 30px;
+}
+
+.evaluare-steps-page h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.evaluare-steps-page span {
+  color: #2c91e0;
+  font-weight: 600;
+}
+
+.evaluare-steps-page .subtitle {
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.evaluare-steps-page .arrow-down {
+  font-size: 2.2rem;
+  color: #2c91e0;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.evaluare-content-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 60px 10%;
+}
+
+.evaluare-content-page .card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.evaluare-content-page .card:hover {
+  transform: translateY(-5px);
+}
+
+.evaluare-content-page h2 {
+  color: #2c91e0;
+  margin-bottom: 15px;
+}
+
+.evaluare-content-page h3 {
+  color: #333;
+  margin-top: 20px;
+}
+
+.evaluare-content-page p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.evaluare-content-page ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #555;
+}
+
+.evaluare-content-page li {
+  margin-bottom: 5px;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero-evaluare-page .hero-content {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 90%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .hero-evaluare-page .hero-content h1 {
+    font-size: 1rem !important;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .hero-evaluare-page .hero-content p {
+    font-size: 0.5rem !important;
+    line-height: 1.1;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
