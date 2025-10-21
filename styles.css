@@ -910,7 +910,7 @@ body {
 
 /* Sectiunea footer */
 .footer {
-  background-color: #0057b7;
+  background-color: #286cb6;
   color: white;
   padding: 20px 10px 5px 10px;
   font-size: 15px;
@@ -1246,7 +1246,7 @@ body {
   }
 
   .hero-container h1 {
-    font-size: 2.8rem;
+    font-size: 2.0rem !important;    
     line-height: 1.3; /* mai mult spațiu între rânduri */
     word-break: break-word; /* sparge cuvintele lungi dacă e nevoie */
     margin: 20 auto;
@@ -1254,7 +1254,7 @@ body {
   }
 
   .hero-container p {
-    font-size: 1.5rem;
+    font-size: 1.1rem !important;
     line-height: 1.4;
     max-width: 90%; /* mai mult spațiu pentru text */
     margin: 0 auto;
@@ -1273,12 +1273,10 @@ body {
     line-height: 1.5;
   }
 }
-
-
 /* ===== SFARSIT STILURI TERAPIA ABA ===== */
 
-/* ===== TERAPIA 3C PAGE - ICON COPIL SI ORBITA ===== */
 
+/* ===== TERAPIA 3C PAGE -  ===== */
 .hero-container-3c {
   position: relative;
   height: 400px;
@@ -1286,7 +1284,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(40deg, #e7760c, #1668e4);
+  background: linear-gradient(40deg, #ca6c40, #3879db);
 }
 
 .content-wrapper-3c {
@@ -1434,22 +1432,23 @@ body {
 
 @media (max-width: 768px) {
   .hero-container-3c .text-content-3c {
-    max-width: 90%;
-    padding: 0 10px;
+    max-width: 100%; /* ocupă tot spațiul disponibil */
+    padding: 0 15px;
     text-align: center;
+    flex: 1 1 100%; /* forțează textul să fie pe tot rândul */
   }
 
   .hero-container-3c h1 {
-    font-size: 2rem;
+    font-size: 2.0rem !important; /* forțăm dimensiunea mai mare */
     line-height: 1.3;
     word-break: break-word;
     margin: 20px auto;
   }
 
   .hero-container-3c p {
-    font-size: 1rem;
-    line-height: 1.4;
-    max-width: 90%;
+    font-size: 1.3rem !important; /* forțăm dimensiunea mai mare */
+    line-height: 1.5;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
   }
@@ -1457,13 +1456,14 @@ body {
 
 @media (max-width: 480px) {
   .hero-container-3c h1 {
-    font-size: 1.6rem;
-    line-height: 1.4;
+    font-size: 2.0rem !important;
+    line-height: 1.3;
   }
 
   .hero-container-3c p {
-    font-size: 0.95rem;
+    font-size: 1.1rem !important;
     line-height: 1.5;
   }
 }
+
 /* ===== SFARSIT STILURI TERAPIA 3C ===== */
